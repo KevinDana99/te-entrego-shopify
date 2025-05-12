@@ -51,7 +51,21 @@ export default defineConfig({
       ignoredRouteFiles: ["**/.*"],
     }),
     tsconfigPaths(),
-    babel(),
+    babel({
+      babelConfig: {
+        plugins: [
+          [
+            "babel-plugin-styled-components",
+            {
+              ssr: true,
+              displayName: process.env.NODE_ENV !== "production", // Solo habilitar displayName en desarrollo
+              minify: process.env.NODE_ENV === "production", // Minificar en producción
+              pure: true, // Eliminar las referencias no usadas
+            },
+          ],
+        ],
+      },
+    }),
   ],
   build: {
     target: "esnext", // Asegúrate de que esté configurado para ESNext
