@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "03cea36f442a95039a3170e210c8d3f8"
-application_url = "https://violence-wins-craig-pose.trycloudflare.com"
+application_url = "https://rare-rolled-scale-qualified.trycloudflare.com"
 embedded = true
 name = "te-entrego"
 handle = "te-entrego-8"
@@ -23,9 +23,9 @@ scopes = "read_orders"
 
 [auth]
 redirect_urls = [
-  "https://violence-wins-craig-pose.trycloudflare.com/auth/callback",
-  "https://violence-wins-craig-pose.trycloudflare.com/auth/shopify/callback",
-  "https://violence-wins-craig-pose.trycloudflare.com/api/auth/callback"
+  "https://rare-rolled-scale-qualified.trycloudflare.com/auth/callback",
+  "https://rare-rolled-scale-qualified.trycloudflare.com/auth/shopify/callback",
+  "https://rare-rolled-scale-qualified.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
