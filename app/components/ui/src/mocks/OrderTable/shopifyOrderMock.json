@@ -1,0 +1,330 @@
+[{
+    "id": 6552921538846,
+    "admin_graphql_api_id": "gid://shopify/Order/6552921538846",
+    "app_id": 1354745,
+    "browser_ip": "200.59.113.227",
+    "buyer_accepts_marketing": false,
+    "cancel_reason": null,
+    "cancelled_at": null,
+    "cart_token": null,
+    "checkout_id": 39041184235806,
+    "checkout_token": "7b0ae29889b626fc207b52b75966f3af",
+    "client_details": {
+        "accept_language": null,
+        "browser_height": null,
+        "browser_ip": "200.59.113.227",
+        "browser_width": null,
+        "session_hash": null,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+    },
+    "closed_at": null,
+    "company": null,
+    "confirmation_number": "9H45XUV0M",
+    "confirmed": true,
+    "contact_email": "kevindana99@gmail.com",
+    "created_at": "2025-03-31T17:47:16-04:00",
+    "currency": "COP",
+    "current_subtotal_price": "1500.00",
+    "current_subtotal_price_set": {
+        "shop_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        }
+    },
+    "current_total_additional_fees_set": null,
+    "current_total_discounts": "0.00",
+    "current_total_discounts_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        }
+    },
+    "current_total_duties_set": null,
+    "current_total_price": "1500.00",
+    "current_total_price_set": {
+        "shop_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        }
+    },
+    "current_total_tax": "0.00",
+    "current_total_tax_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        }
+    },
+    "customer_locale": "en",
+    "device_id": null,
+    "discount_codes": [],
+    "email": "kevindana99@gmail.com",
+    "estimated_taxes": false,
+    "financial_status": "paid",
+    "fulfillment_status": null,
+    "landing_site": null,
+    "landing_site_ref": null,
+    "location_id": null,
+    "merchant_of_record_app_id": null,
+    "name": "#1002",
+    "note": null,
+    "note_attributes": [],
+    "number": 2,
+    "order_number": 1002,
+    "order_status_url": "https://te-entrego-store.myshopify.com/92580446494/orders/ad0c2568ad0016b1c10e2db7df5c952a/authenticate?key=0c3b307a81f413041e826bac979b2e0b",
+    "original_total_additional_fees_set": null,
+    "original_total_duties_set": null,
+    "payment_gateway_names": [
+        "manual"
+    ],
+    "phone": null,
+    "po_number": null,
+    "presentment_currency": "COP",
+    "processed_at": "2025-03-31T17:47:16-04:00",
+    "reference": null,
+    "referring_site": null,
+    "source_identifier": null,
+    "source_name": "shopify_draft_order",
+    "source_url": null,
+    "subtotal_price": "1500.00",
+    "subtotal_price_set": {
+        "shop_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        }
+    },
+    "tags": "",
+    "tax_exempt": false,
+    "tax_lines": [],
+    "taxes_included": false,
+    "test": false,
+    "token": "ad0c2568ad0016b1c10e2db7df5c952a",
+    "total_discounts": "0.00",
+    "total_discounts_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        }
+    },
+    "total_line_items_price": "1500.00",
+    "total_line_items_price_set": {
+        "shop_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        }
+    },
+    "total_outstanding": "0.00",
+    "total_price": "1500.00",
+    "total_price_set": {
+        "shop_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "1500.00",
+            "currency_code": "COP"
+        }
+    },
+    "total_shipping_price_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        }
+    },
+    "total_tax": "0.00",
+    "total_tax_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "COP"
+        }
+    },
+    "total_tip_received": "0.00",
+    "total_weight": 600,
+    "updated_at": "2025-03-31T17:47:17-04:00",
+    "user_id": 117206384926,
+    "billing_address": {
+        "first_name": "Kevin",
+        "address1": "Bogotá",
+        "phone": "+5715551234",
+        "city": "Bogotá",
+        "zip": "110110",
+        "province": "Bogotá, D.C.",
+        "country": "Colombia",
+        "last_name": "Dana",
+        "address2": "Bogota",
+        "company": "Te-entrego",
+        "latitude": 4.6073954,
+        "longitude": -74.0731162,
+        "name": "Kevin Dana",
+        "country_code": "CO",
+        "province_code": "DC"
+    },
+    "customer": {
+        "id": 8910894498078,
+        "email": "kevindana99@gmail.com",
+        "created_at": "2025-03-31T17:46:24-04:00",
+        "updated_at": "2025-03-31T17:47:17-04:00",
+        "first_name": "Kevin",
+        "last_name": "Dana",
+        "state": "disabled",
+        "note": null,
+        "verified_email": true,
+        "multipass_identifier": null,
+        "tax_exempt": false,
+        "phone": null,
+        "email_marketing_consent": {
+            "state": "not_subscribed",
+            "opt_in_level": "single_opt_in",
+            "consent_updated_at": null
+        },
+        "sms_marketing_consent": null,
+        "tags": "",
+        "currency": "COP",
+        "tax_exemptions": [],
+        "admin_graphql_api_id": "gid://shopify/Customer/8910894498078",
+        "default_address": {
+            "id": 11033254363422,
+            "customer_id": 8910894498078,
+            "first_name": "Kevin",
+            "last_name": "Dana",
+            "company": "Te-entrego",
+            "address1": "Bogotá",
+            "address2": "Bogota",
+            "city": "Bogotá",
+            "province": "Bogotá, D.C.",
+            "country": "Colombia",
+            "zip": "110110",
+            "phone": "+5715551234",
+            "name": "Kevin Dana",
+            "province_code": "DC",
+            "country_code": "CO",
+            "country_name": "Colombia",
+            "default": true
+        }
+    },
+    "discount_applications": [],
+    "fulfillments": [],
+    "line_items": [
+        {
+            "id": 16765519659294,
+            "admin_graphql_api_id": "gid://shopify/LineItem/16765519659294",
+            "attributed_staffs": [],
+            "current_quantity": 3,
+            "fulfillable_quantity": 3,
+            "fulfillment_service": "manual",
+            "fulfillment_status": null,
+            "gift_card": false,
+            "grams": 200,
+            "name": "Camiseta Roja - Rojo",
+            "price": "500.00",
+            "price_set": {
+                "shop_money": {
+                    "amount": "500.00",
+                    "currency_code": "COP"
+                },
+                "presentment_money": {
+                    "amount": "500.00",
+                    "currency_code": "COP"
+                }
+            },
+            "product_exists": true,
+            "product_id": 9736522400030,
+            "properties": [],
+            "quantity": 3,
+            "requires_shipping": true,
+            "sku": "",
+            "taxable": false,
+            "title": "Camiseta Roja",
+            "total_discount": "0.00",
+            "total_discount_set": {
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "COP"
+                },
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "COP"
+                }
+            },
+            "variant_id": 49701061394718,
+            "variant_inventory_management": "shopify",
+            "variant_title": "Rojo",
+            "vendor": "Te-entrego",
+            "tax_lines": [
+                {
+                    "channel_liable": false,
+                    "price": "0.00",
+                    "price_set": {
+                        "shop_money": {
+                            "amount": "0.00",
+                            "currency_code": "COP"
+                        },
+                        "presentment_money": {
+                            "amount": "0.00",
+                            "currency_code": "COP"
+                        }
+                    },
+                    "rate": 0.19,
+                    "title": "VAT"
+                }
+            ],
+            "duties": [],
+            "discount_allocations": []
+        }
+    ],
+    "payment_terms": null,
+    "refunds": [],
+    "shipping_address": {
+        "first_name": "Kevin",
+        "address1": "Bogotá",
+        "phone": "+5715551234",
+        "city": "Bogotá",
+        "zip": "110110",
+        "province": "Bogotá, D.C.",
+        "country": "Colombia",
+        "last_name": "Dana",
+        "address2": "Bogota",
+        "company": "Te-entrego",
+        "latitude": 4.6073954,
+        "longitude": -74.0731162,
+        "name": "Kevin Dana",
+        "country_code": "CO",
+        "province_code": "DC"
+    },
+    "shipping_lines": []
+}]

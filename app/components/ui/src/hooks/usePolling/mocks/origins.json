@@ -1,0 +1,11 @@
+{
+  "shopify": {
+    "url": "http://127.0.0.1:3001/shopify.com/orders"
+  },
+  "woocommerce": {
+    "url": "/wp-json/wc/v3/orders/"
+  },
+  "vtex": {
+    "url": ""
+  }
+}
