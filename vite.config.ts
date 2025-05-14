@@ -1,10 +1,10 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig, type UserConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import babel from "vite-plugin-babel";
-// Related: https://github.com/remix-run/remix/issues/2835#issuecomment-1144102176
-// Replace the HOST env var with SHOPIFY_APP_URL so that it doesn't break the remix server. The CLI will eventually
-// stop passing in HOST, so we can remove this workaround after the next major release.
+import react from "@vitejs/plugin-react";
+import path from "path";
+
+// Workaround for SHOPIFY_APP_URL vs HOST env var
 if (
   process.env.HOST &&
   (!process.env.SHOPIFY_APP_URL ||
@@ -14,79 +14,70 @@ if (
   delete process.env.HOST;
 }
 
-const host = new URL(process.env.SHOPIFY_APP_URL || "http://localhost")
+const host = new URL(process.env.SHOPIFY_APP_URL ?? "http://localhost")
   .hostname;
 
-let hmrConfig;
-if (host === "localhost") {
-  hmrConfig = {
-    protocol: "ws",
-    host: "localhost",
-    port: 64999,
-    clientPort: 64999,
-    overlay: false,
-  };
-} else {
-  hmrConfig = {
-    protocol: "wss",
-    host: host,
-    port: parseInt(process.env.FRONTEND_PORT!) || 8002,
-    clientPort: 443,
-    overlay: false,
-  };
-}
+const hmrConfig =
+  host === "localhost"
+    ? {
+        protocol: "ws",
+        host: "localhost",
+        port: 64999,
+        clientPort: 64999,
+        overlay: false,
+      }
+    : {
+        protocol: "wss",
+        host,
+        port: parseInt(process.env.FRONTEND_PORT ?? "8002", 10),
+        clientPort: 443,
+        overlay: false,
+      };
 
 export default defineConfig({
   server: {
-    allowedHosts: [".ngrok-free.app"],
-    port: Number(process.env.PORT || 3000),
+    port: Number(process.env.PORT ?? 3000),
     hmr: hmrConfig,
     fs: {
-      // See https://vitejs.dev/config/server-options.html#server-fs-allow for more information
       allow: ["app", "node_modules"],
     },
   },
+
   plugins: [
     remix({
       ignoredRouteFiles: ["**/.*"],
     }),
-    tsconfigPaths(),
-    babel({
-      babelConfig: {
+
+    react({
+      babel: {
         plugins: [
           [
             "babel-plugin-styled-components",
-            {
-              ssr: true,
-              displayName: process.env.NODE_ENV !== "production", // Solo habilitar displayName en desarrollo
-              minify: false, // Minificar en producción
-              pure: true, // Eliminar las referencias no usadas
-            },
+            { ssr: true, displayName: true, preprocess: false },
           ],
         ],
       },
     }),
+    tsconfigPaths(),
   ],
+  resolve: {
+    alias: [
+      {
+        find: /^styled-components$/,
+        replacement: path.resolve(
+          __dirname,
+          "utils/styled-components-fix/index.ts",
+        ),
+      },
+    ],
+  },
   build: {
-    target: "esnext", // Asegúrate de que esté configurado para ESNext
+    target: "esnext",
     assetsInlineLimit: 0,
     minify: false,
   },
-  resolve: {
-    alias: {
-      "styled-components": "styled-components",
-    },
-  },
+
   ssr: {
-    noExternal: [
-      "styled-components",
-      "@shopify/app-bridge",
-      "@shopify/app-bridge-react",
-      "@shopify/shopify-app-remix",
-      "@shopify/shopify-app-session-storage-prisma",
-      "@shopify/polaris",
-      "isbot",
-      "web-vitals",
-    ],
+    noExternal: ["styled-components"],
   },
-}) satisfies UserConfig;
+} as UserConfig);
