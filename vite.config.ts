@@ -59,7 +59,7 @@ export default defineConfig({
             {
               ssr: true,
               displayName: process.env.NODE_ENV !== "production", // Solo habilitar displayName en desarrollo
-              minify: process.env.NODE_ENV === "production", // Minificar en producción
+              minify: false, // Minificar en producción
               pure: true, // Eliminar las referencias no usadas
             },
           ],
@@ -70,10 +70,23 @@ export default defineConfig({
   build: {
     target: "esnext", // Asegúrate de que esté configurado para ESNext
     assetsInlineLimit: 0,
+    minify: false,
   },
   resolve: {
     alias: {
       "styled-components": "styled-components",
     },
+  },
+  ssr: {
+    noExternal: [
+      "styled-components",
+      "@shopify/app-bridge",
+      "@shopify/app-bridge-react",
+      "@shopify/shopify-app-remix",
+      "@shopify/shopify-app-session-storage-prisma",
+      "@shopify/polaris",
+      "isbot",
+      "web-vitals",
+    ],
   },
 }) satisfies UserConfig;

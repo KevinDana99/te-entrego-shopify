@@ -50,7 +50,7 @@ export default async function handleRequest(
                 ${styles}  <!-- Inyecta los estilos aquí -->
               </head>
               <body>
-                <div id="root">${stream}</div>
+                <div id="root">${stream}</div> <!-- Aquí no deberías pasar directamente el stream -->
               </body>
             </html>
           `;
@@ -62,6 +62,7 @@ export default async function handleRequest(
             }),
           );
 
+          // Asegúrate de que el cuerpo sea procesado
           pipe(body);
         },
         onShellError(error) {
