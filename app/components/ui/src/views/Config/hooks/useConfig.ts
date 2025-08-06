@@ -119,5 +119,4 @@ const useConfig = () => {
     showAlert,
   };
 };
-
 export default useConfig;
