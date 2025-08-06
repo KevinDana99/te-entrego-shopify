@@ -29,8 +29,10 @@ const Shipments = () => {
       codigocliente: ACCESS_CLIENT_CODE,
       accesoapi: ACCESS_PUBLIC_KEY,
       llaveseguridad: ACCESS_SECRET_KEY,
-    }
+    },
   );
+
+  console.log({ currentProps });
 
   useEffect(() => {
     if (currentProps?.refetch) {
