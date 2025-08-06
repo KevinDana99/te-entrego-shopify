@@ -67,7 +67,7 @@ const useConfig = () => {
       value: "Se guardo tu configuracion correctamente",
       theme: "success",
     });
-    window.location.reload();
+    setTimeout(() => window.location.reload(), 5000);
   };
 
   const handleOnChangeConfig = (newConfig: Partial<ConfigType>) => {
