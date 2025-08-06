@@ -28,9 +28,7 @@ export default function App() {
   }, []);
 
   const { store } = useAuth();
-  const { config } = useConfig();
 
-  console.log({ configv2: config, store });
   return (
     <AppProvider isEmbeddedApp apiKey={apiKey}>
       <NavMenu>
