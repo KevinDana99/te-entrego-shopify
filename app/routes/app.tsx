@@ -11,7 +11,6 @@ import { Layout } from "@shopify/polaris";
 import { useEffect, useState } from "react";
 import useAuth from "./hooks/useAuth";
 import Wrapper from "../components/ui/src/wrapper";
-import useConfig from "app/components/ui/src/views/Config/hooks/useConfig";
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
