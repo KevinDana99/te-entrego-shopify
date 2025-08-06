@@ -30,8 +30,9 @@ export default function App() {
   const { store } = useAuth();
   const { config } = useConfig();
 
+  console.log({ configv2: config, store });
   return (
-    <AppProvider isEmbeddedApp apiKey={config.platform_secret_key}>
+    <AppProvider isEmbeddedApp apiKey={apiKey}>
       <NavMenu>
         <Link to="/app" rel="home">
           Home
