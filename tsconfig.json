@@ -5,7 +5,8 @@
     "**/*.ts",
     "**/*.tsx",
     "utils/styled-components-fix/index.ts",
-    "utils/styled-components-fix/index.d.ts"
+    "utils/styled-components-fix/index.d.ts",
+    "plugin"
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],

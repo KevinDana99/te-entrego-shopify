@@ -1,8 +1,8 @@
-import wooOrdersMock from "./../../../mocks/OrderTable/wooOrderMock.json";
-import shopifyOrdersMock from "./../../../mocks/OrderTable/shopifyOrderMock.json";
+import wooOrdersMock from "../../../mocks/OrderTable/wooOrderMock.json";
+import shopifyOrdersMock from "../../../mocks/OrderTable/shopifyOrderMock.json";
 import { ShopNameType } from "../../../hooks/usePolling/types";
 export type WoocomerceOrdersType = typeof wooOrdersMock;
-export type ShopifyOrdersType = {orders: typeof shopifyOrdersMock};
+export type ShopifyOrdersType = { orders: typeof shopifyOrdersMock };
 export type OrderTableType = {
   headers: string[];
   data: WoocomerceOrdersType | ShopifyOrdersType;
@@ -43,7 +43,7 @@ export type WoocomerceOrderType = {
   line_items: [
     {
       fulfillable_quantity: number;
-    }
+    },
   ];
   products?: {
     weight: number;
@@ -87,7 +87,7 @@ export type ShopifyOrderType = {
   line_items: [
     {
       fulfillable_quantity: number;
-    }
+    },
   ];
   products?: {
     weight: number;

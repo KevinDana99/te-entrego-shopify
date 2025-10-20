@@ -10,7 +10,7 @@ import { authenticate } from "../shopify.server";
 import { Layout } from "@shopify/polaris";
 import { useEffect, useState } from "react";
 import useAuth from "./hooks/useAuth";
-import Wrapper from "../components/ui/src/wrapper";
+import Wrapper from "../../plugin/src/wrapper";
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {

@@ -3,18 +3,17 @@
 client_id = "03cea36f442a95039a3170e210c8d3f8"
 name = "te-entrego"
 handle = "te-entrego-8"
-application_url = "https://te-entrego-8-white-haze-1163.fly.dev"
+application_url = "https://te-entrego-8-empty-wind-4404.fly.dev"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-include_config_on_deploy = true
 
 [webhooks]
 api_version = "2025-01"
 
   [[webhooks.subscriptions]]
-  uri = "https://te-entrego-8-white-haze-1163.fly.dev/webhooks"
+  uri = "https://te-entrego-8-empty-wind-4404.fly.dev/webhooks"
   compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
 
 [access_scopes]
@@ -23,9 +22,9 @@ scopes = "read_orders"
 
 [auth]
 redirect_urls = [
-  "https://te-entrego-8-white-haze-1163.fly.dev/auth/callback",
-  "https://te-entrego-8-white-haze-1163.fly.dev/auth/shopify/callback",
-  "https://te-entrego-8-white-haze-1163.fly.dev/api/auth/callback"
+  "https://te-entrego-8-empty-wind-4404.fly.dev/auth/callback",
+  "https://te-entrego-8-empty-wind-4404.fly.dev/auth/shopify/callback",
+  "https://te-entrego-8-empty-wind-4404.fly.dev/api/auth/callback"
 ]
 
 [pos]
