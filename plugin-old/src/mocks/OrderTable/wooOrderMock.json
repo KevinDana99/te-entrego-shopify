@@ -1,0 +1,69 @@
+[
+    {
+      "id": 185,
+      "parent_id": 0,
+      "status": "on-hold",
+      "currency": "ARS",
+      "total": "40000.00",
+      "subtotal": 40000,
+      "date_created": "2024-11-13T17:51:11",
+      "date_modified": "2024-11-13T17:53:40",
+      "products": [
+        {
+            "name": "ticket 23",
+            "weight": 0,
+            "width": 0,
+            "height": 0,
+            "length": 0
+        }
+    ],
+      "billing": {
+        "first_name": "Kevin",
+        "last_name": "Dana",
+        "address_1": "Barrio Roca",
+        "address_2": "",
+        "city": "colonia",
+        "state": "U",
+        "postcode": "9120",
+        "country": "AR",
+        "email": "kevindana99@gmail.com",
+        "phone": "02805062685"
+      },
+      "store": {
+       "shop_name": "name",
+        "address_1": "other",
+        "address_2": "",
+        "city": "other",
+        "state": "U",
+        "postcode": "9120",
+        "country": "AR",
+        "email": "kevindana99@gmail.com",
+        "phone": "02805062685"
+      },
+      "shipping": {
+        "first_name": "Kevin",
+        "last_name": "Dana",
+        "address_1": "Barrio Roca",
+        "address_2": "",
+        "city": "colonia",
+        "state": "U",
+        "postcode": "9120",
+        "country": "AR"
+      },
+      "line_items": {
+        "293": {
+          "id": 293,
+          "name": "ticket 23",
+          "product_id": 85,
+          "quantity": 2,
+          "price": 20000,
+          "subtotal": "40000",
+          "total": "40000"
+        }
+      },
+      "shipping_lines": [],
+      "payment_method": "bacs",
+      "payment_method_title": "Direct bank transfer"
+    }
+    
+  ]

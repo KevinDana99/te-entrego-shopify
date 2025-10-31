@@ -29,12 +29,11 @@ const Shipments = () => {
       codigocliente: ACCESS_CLIENT_CODE,
       accesoapi: ACCESS_PUBLIC_KEY,
       llaveseguridad: ACCESS_SECRET_KEY,
-    },
+    }
   );
 
   useEffect(() => {
     if (currentProps?.refetch) {
-      console.log({ currentProps });
       handleRefetch();
     }
   }, [currentProps?.refetch]);

@@ -34,10 +34,10 @@ const useConfig = () => {
     ? localStorage.getItem("config")
     : null;
   const [config, setConfig] = useState<ConfigType>(
-    prevConfig ? JSON.parse(prevConfig) : DEFAULT_CONFIG,
+    prevConfig ? JSON.parse(prevConfig) : DEFAULT_CONFIG
   );
   const handleShowInput = (
-    value: Partial<{ secret: boolean; platform_secret: boolean }>,
+    value: Partial<{ secret: boolean; platform_secret: boolean }>
   ) => {
     setShowInput({
       ...showInput,
@@ -67,7 +67,6 @@ const useConfig = () => {
       value: "Se guardo tu configuracion correctamente",
       theme: "success",
     });
-    setTimeout(() => window.location.reload(), 500);
   };
 
   const handleOnChangeConfig = (newConfig: Partial<ConfigType>) => {
@@ -119,4 +118,5 @@ const useConfig = () => {
     showAlert,
   };
 };
+
 export default useConfig;
