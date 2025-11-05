@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UseExceptionHandlerType } from "./types";
+import type { UseExceptionHandlerType } from "./types";
 
 const useExceptionHandler = () => {
   const [message, setMessage] =

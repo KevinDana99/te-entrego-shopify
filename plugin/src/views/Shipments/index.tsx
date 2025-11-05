@@ -1,11 +1,13 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Logo from "../../components/assets/Logo";
 import ShipmentTable from "../../components/tables/ShipmentTable";
 import useFetch from "../../hooks/useFetch";
 import useRouter from "../../routes/context/hook/useRouter";
 import { ConfigType } from "../Config/hooks/useConfig";
+import { ExceptionHandlerContext } from "plugin/src/contexts/ExceptionHandlerContext";
 
 const Shipments = () => {
+  const context = useContext(ExceptionHandlerContext);
   const { currentProps } = useRouter();
   const minDate = new Date();
   minDate.setDate(minDate.getDate() - (34 + 1));
@@ -55,6 +57,7 @@ const Shipments = () => {
   }
 
   if (error) {
+    console.log({ context });
     return `${error}`;
   }
 

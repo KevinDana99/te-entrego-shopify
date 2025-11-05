@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const useFetch = (url: RequestInfo | URL, body?: Record<string, any>) => {
   const [data, setData] = useState<any>([]);
-  const [error, setError] = useState<null | unknown>(null);
+  const [error, setError] = useState<unknown>(null);
   const [loading, setLoading] = useState(false);
   const handleRequest = async () => {
     setLoading(true);

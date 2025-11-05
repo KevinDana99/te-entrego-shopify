@@ -1,8 +1,8 @@
 import Logo from "../../components/assets/Logo";
 import OrderTable from "../../components/tables/OrderTable";
-import { ShopNameType } from "../../hooks/usePolling/types";
+import type { ShopNameType } from "../../hooks/usePolling/types";
 import usePolling from "../../hooks/usePolling/usePolling";
-import { StoreType } from "../../wrapper";
+import type { StoreType } from "../../wrapper";
 
 const Orders = ({
   shopName,

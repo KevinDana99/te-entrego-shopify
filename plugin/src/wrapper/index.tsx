@@ -4,7 +4,8 @@ import Sidebar from "../components/layouts/Sidebar";
 import Views from "../views";
 import Layout from "../Layout";
 import useConfig from "../views/Config/hooks/useConfig";
-import { ShopNameType } from "../hooks/usePolling/types";
+import type { ShopNameType } from "../hooks/usePolling/types";
+import { ExceptionHandlerProvider } from "../contexts/ExceptionHandlerContext";
 
 export type ShopifyStoreType = {
   apiKey: string;
@@ -29,14 +30,16 @@ const Wrapper = ({
   useConfig();
 
   return (
-    <Container>
-      <AppRouter defaultPath="shipments">
-        <Layout>
-          <Sidebar />
-          <Views shopName={shopName} store={store} />
-        </Layout>
-      </AppRouter>
-    </Container>
+    <ExceptionHandlerProvider>
+      <Container>
+        <AppRouter defaultPath="shipments">
+          <Layout>
+            <Sidebar />
+            <Views shopName={shopName} store={store} />
+          </Layout>
+        </AppRouter>
+      </Container>
+    </ExceptionHandlerProvider>
   );
 };
 

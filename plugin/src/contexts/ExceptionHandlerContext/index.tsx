@@ -1,31 +1,23 @@
-import { createContext, ReactNode } from "react";
+import type { ReactNode } from "react";
+import { createContext } from "react";
 import useExceptionHandler from "../../hooks/useExceptionHandler";
-import { ExceptionHandlerContextInterface } from "../../hooks/useExceptionHandler/types";
-export const ExceptionHandlerContext =
-  createContext<ExceptionHandlerContextInterface | null>(null);
+import type { ExceptionHandlerContextInterface } from "../../hooks/useExceptionHandler/types";
+export const ExceptionHandlerContext = createContext(
+  {} as ExceptionHandlerContextInterface
+);
 
 export const ExceptionHandlerProvider = ({
   children,
 }: {
   children: ReactNode;
 }) => {
-  const props = useExceptionHandler();
+  const { error, handleException, message, statusCode } = useExceptionHandler();
+
   return (
-    <ExceptionHandlerContext.Provider value={props}>
+    <ExceptionHandlerContext.Provider
+      value={{ error, handleException, message, statusCode }}
+    >
       {children}
     </ExceptionHandlerContext.Provider>
   );
 };
-/*
-const ComponentOther = async () => {
-  const { handleException } = useExceptionHandler();
-
-  try {
-    const req = await fetch("api");
-    const res = await req.json();
-    return res;
-  } catch (err) {
-    console.log(err);
-  }
-};
-*/
