@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UsePollingType } from "./types";
 import handleGetOrders from "./functions/handleGetOrders";
 import { ConfigType } from "../../views/Config/hooks/useConfig";
 import { orderErrors } from "./mocks/errors";
+import { ExceptionHandlerContext } from "../../contexts/ExceptionHandlerContext";
 
 const TIME_INTERVAL_REQUEST = 8000;
 
@@ -16,8 +17,7 @@ const usePolling = ({
   const SECRET_KEY = config.platform_secret_key;
   const [data, setData] = useState<[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<unknown>(null);
-
+  const { error, handleException } = useContext(ExceptionHandlerContext);
   const selectedShop = handleGetOrders({
     shopName,
     store,
@@ -32,17 +32,28 @@ const usePolling = ({
       const req = await fetch(origin, {
         method: "GET",
       });
-      const res = await req.json();
-      if (!res.error) {
-        setData(res);
-      } else {
-        if (orderErrors["authorization-error"].error === res.message) {
-          setError(orderErrors["authorization-error"].message);
+
+      try {
+        const res = await req.json();
+
+        if (!res.error) {
+          setData(res);
+        } else {
+          if (orderErrors["authorization-error"].error === res.message) {
+            throw new Error(orderErrors["authorization-error"].message);
+          }
         }
+      } catch {
+        throw new Error("No se pudo conectar con las ordenes de tu tienda");
       }
     } catch (err) {
       if (err instanceof Error) {
-        setError(err.message);
+        handleException({
+          message: err.message,
+          error: err.stack,
+          statusCode: null,
+          name: "ERROR",
+        });
       }
     } finally {
       setLoading(false);

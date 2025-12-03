@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
 import useRouter from "../../../routes/context/hook/useRouter";
 import Logo from "../../assets/Logo";
 import { Head, Table, Th, Container, Block } from "../Table/styled";
 import CotizationDetail from "./CotizationDetail";
 import useShipmentMethod from "./hooks/useShipmentMethod";
-import { ShipmentTableType } from "./types";
+import type { ShipmentTableType } from "./types";
 
 const ShipmentMethodTable = ({ headers }: ShipmentTableType) => {
   const { navigate, currentProps } = useRouter();
@@ -16,12 +17,17 @@ const ShipmentMethodTable = ({ headers }: ShipmentTableType) => {
     loading,
     error,
   } = useShipmentMethod(currentProps);
-
+  const [loadingDetail, setLoadingDetail] = useState(false);
   const handleRedirection = async () => {
     await handleCreateShipment();
     navigate("shipments", { refetch: true });
   };
-
+  const handleLoadingDetail = (value: boolean) => {
+    setLoadingDetail(value);
+  };
+  useEffect(() => {
+    console.log({ selectedMethod });
+  }, [selectedMethod]);
   if (loading) {
     return (
       <div
@@ -41,6 +47,7 @@ const ShipmentMethodTable = ({ headers }: ShipmentTableType) => {
   if (error) {
     return `${JSON.stringify(error)}`;
   }
+
   return (
     <>
       <Container>
@@ -55,6 +62,7 @@ const ShipmentMethodTable = ({ headers }: ShipmentTableType) => {
           </Head>
           {customOrder && (
             <CotizationDetail
+              handleLoadingDetail={handleLoadingDetail}
               preOrder={preOrder}
               customOrder={customOrder}
               handleSelectedMethod={handleSelectedMethod}
@@ -65,10 +73,11 @@ const ShipmentMethodTable = ({ headers }: ShipmentTableType) => {
       </Container>
 
       <button
+        disabled={!selectedMethod || loadingDetail}
         style={{
           alignSelf: "flex-end",
           marginTop: 40,
-          background: "#59b6e7",
+          background: !selectedMethod || loadingDetail ? "#bbbbbb" : "#59b6e7",
           outline: "none",
         }}
         onClick={() => {
